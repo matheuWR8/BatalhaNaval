@@ -29,6 +29,9 @@ public class Celula {
         foiAtingida = true;
         if (contemNavio) {
             navio.destruirParte();
+            return true;
         }
+        
+        return false;
     }
 }
