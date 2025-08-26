@@ -24,7 +24,7 @@ public class Tabuleiro {
         }
     }
 
-    public Celula getCelula(int x, int y) throws Exception {
+    public Celula getCelula(int x, int y) {
         return grade[x][y];
     }
 

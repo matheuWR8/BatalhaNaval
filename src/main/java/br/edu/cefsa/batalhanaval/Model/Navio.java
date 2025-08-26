@@ -8,11 +8,13 @@ package br.edu.cefsa.batalhanaval.Model;
  *
  * @author math
  */
-public class Navio {
+public abstract class Navio {
     
     private String tipo;
     private int tamanho;
     private int partesRestantes;
     
-    
+    public void destruirParte(){
+        partesRestantes--;
+    }
 }
