@@ -10,12 +10,20 @@ package br.edu.cefsa.batalhanaval.Model;
  */
 public abstract class Embarcacao {
     
-    private String tipo;
-    private int tamanho;
-    private int partesRestantes;
+    protected String tipo;
+    protected int tamanho;
+    protected int partesRestantes;
     
+    public String getTipo() {
+        return tipo;
+    }
+
     public int getTamanho() {
         return tamanho;
+    }
+
+    public int getPartesRestantes() {
+        return partesRestantes;
     }
     
     public void destruirParte(){
