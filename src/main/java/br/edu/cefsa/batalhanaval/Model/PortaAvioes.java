@@ -8,13 +8,6 @@ package br.edu.cefsa.batalhanaval.Model;
  *
  * @author math
  */
-public abstract class Navio {
+public class PortaAvioes extends Embarcacao {
     
-    private String tipo;
-    private int tamanho;
-    private int partesRestantes;
-    
-    public void destruirParte(){
-        partesRestantes--;
-    }
 }

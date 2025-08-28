@@ -12,7 +12,7 @@ public class Celula {
 
     private boolean contemNavio;
     private boolean foiAtingida;
-    private Navio navio;
+    private Embarcacao navio;
 
     public Celula() {
         this.contemNavio = false;
@@ -20,7 +20,7 @@ public class Celula {
         this.navio = null;
     }
 
-    public void setNavio(Navio navio) {
+    public void setNavio(Embarcacao navio) {
         this.navio = navio;
         contemNavio = true;
     }
@@ -34,4 +34,10 @@ public class Celula {
         
         return false;
     }
+    
+    public boolean estaOcupada() {
+        return !contemNavio;
+    }
+    
+
 }
