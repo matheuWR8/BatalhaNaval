@@ -31,14 +31,16 @@ public abstract class Embarcacao {
     }
 
     public void tiroSimples(Tabuleiro tabuleiro, int x, int y) {
-        tabuleiro.getCelula(x,y).atingir();
+        if (x >= tabuleiro.getTamanho() && y >= tabuleiro.getTamanho()) {
+            tabuleiro.getCelula(x,y).atingir();
+        }
     }
 
     protected void tiroDuplo(Tabuleiro tabuleiro, int x, int y) {
         
     }
 
-    protected  void tiroExplosivo(Tabuleiro tabuleiro, int x, int y){
+    protected void tiroExplosivo(Tabuleiro tabuleiro, int x, int y) {
 
     }
 }

@@ -26,6 +26,10 @@ public class Tabuleiro {
         }
     }
 
+    public int getTamanho() {
+        return tamanho;
+    }
+
     public Celula getCelula(int x, int y) {
         return grade[x][y];
     }

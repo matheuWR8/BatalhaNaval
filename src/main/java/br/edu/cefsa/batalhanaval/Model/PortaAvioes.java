@@ -16,4 +16,15 @@ public class PortaAvioes extends Embarcacao {
         super.partesRestantes = tamanho;
     }
 
+    @Override
+    public void tiroDuplo(Tabuleiro tabuleiro, int x, int y) {
+        
+    }
+
+    @Override
+    public void tiroExplosivo(Tabuleiro tabuleiro, int x, int y) {
+        
+    }
+
+
 }
