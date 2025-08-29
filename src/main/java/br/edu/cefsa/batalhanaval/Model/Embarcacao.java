@@ -34,7 +34,11 @@ public abstract class Embarcacao {
         tabuleiro.getCelula(x,y).atingir();
     }
 
-    public void tiroDuplo(Tabuleiro tabuleiro, int x, int y) {
+    protected void tiroDuplo(Tabuleiro tabuleiro, int x, int y) {
         
+    }
+
+    protected  void tiroExplosivo(Tabuleiro tabuleiro, int x, int y){
+
     }
 }

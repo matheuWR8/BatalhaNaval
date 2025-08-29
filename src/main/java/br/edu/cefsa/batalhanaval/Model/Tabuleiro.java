@@ -65,7 +65,7 @@ public class Tabuleiro {
                 if (grade[x][y+i].contemNavio()) {
                     return false;
                 }
-                posicoes.add(grade[x+i][y]);
+                posicoes.add(grade[x][y+i]);
             }
         }
 
