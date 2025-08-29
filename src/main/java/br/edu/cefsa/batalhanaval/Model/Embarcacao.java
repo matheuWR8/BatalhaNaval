@@ -29,4 +29,12 @@ public abstract class Embarcacao {
     public void destruirParte(){
         partesRestantes--;
     }
+
+    public void tiroSimples(Tabuleiro tabuleiro, int x, int y) {
+        tabuleiro.getCelula(x,y).atingir();
+    }
+
+    public void tiroDuplo(Tabuleiro tabuleiro, int x, int y) {
+        
+    }
 }

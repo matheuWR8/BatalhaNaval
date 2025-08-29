@@ -35,9 +35,12 @@ public class Celula {
         return false;
     }
     
-    public boolean estaOcupada() {
-        return !contemNavio;
+    public boolean contemNavio() {
+        return contemNavio;
     }
-    
+
+    public boolean foiAtingida() {
+        return foiAtingida;
+    }
 
 }

@@ -13,7 +13,7 @@ public class PortaAvioes extends Embarcacao {
     public PortaAvioes() {
         super.tipo = "Porta-Aviões";
         super.tamanho = 6;
-        super.partesRestantes = 6;
+        super.partesRestantes = tamanho;
     }
 
 }

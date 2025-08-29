@@ -4,8 +4,7 @@
  */
 package br.edu.cefsa.batalhanaval.Model;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -31,26 +30,46 @@ public class Tabuleiro {
         return grade[x][y];
     }
     
-    public void posicionarNavio(Embarcacao navio, int x, int y, boolean horizontal){
-        LinkedList<Celula> posicoes = new LinkedList<Celula>();
-        if (horizontal) {
-            for (int i = 0; i < navio.getTamanho(); i++){
-                if (grade[x+i][y].estaOcupada()) {
-                    posicoes.add(grade[x+i][y]);
-                } else {
-                    return;
+    public boolean posicionarNavio(Embarcacao navio, int x, int y, boolean ehHorizontal){
+        ArrayList<Celula> posicoes = new ArrayList<>();
+
+        if (validarPosicoes(navio.getTamanho(), x, y, ehHorizontal, posicoes)){
+            for (Celula celula : posicoes) {
+                celula.setNavio(navio);
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean validarPosicoes(int tamanhoNavio, int x, int y, boolean ehHorizontal, 
+                                    ArrayList<Celula> posicoes) {
+        if (ehHorizontal) {
+            if (x + tamanhoNavio > tamanho) {
+                return false;
+            }
+
+            for (int i = 0; i < tamanhoNavio; i++){
+                if (grade[x+i][y].contemNavio()) {
+                    return false;
                 }
+                posicoes.add(grade[x+i][y]);
             }
         } else {
-            for (int i = 0; i < navio.getTamanho(); i++){
-                if (grade[x][y+i].estaOcupada()) {
-                    posicoes.add(grade[x+i][y]);
-                } else {
-                    return;
+            if (y + tamanhoNavio > tamanho) {
+                return false;
+            }
+
+            for (int i = 0; i < tamanhoNavio; i++){
+                if (grade[x][y+i].contemNavio()) {
+                    return false;
                 }
+                posicoes.add(grade[x+i][y]);
             }
         }
-        // ...
+
+        return true;
     }
 
 }
