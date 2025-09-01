@@ -33,7 +33,7 @@ public abstract class Embarcacao {
     // TODO: os métodos de tiro devem notificar que atingiram um barco e quantos
 
     public void tiroSimples(Tabuleiro tabuleiro, int x, int y) {
-        if (x >= tabuleiro.getTamanho() && y >= tabuleiro.getTamanho()) {
+        if (x < tabuleiro.getTamanho() && y < tabuleiro.getTamanho()) {
             tabuleiro.getCelula(x,y).atingir();
         }
     }
@@ -43,13 +43,13 @@ public abstract class Embarcacao {
         if (ehHorizontal) {
             tiroSimples(tabuleiro, x+1, y);
         } else {
-            tiroSimples(tabuleiro, x, y);
+            tiroSimples(tabuleiro, x, y+1);
         }
     }
 
     protected void tiroExplosivo(Tabuleiro tabuleiro, int x, int y) {
-        for (int i = -1; i == 1; i ++) {
-            for (int j = -1; j == 1; j ++){
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++){
                 tiroSimples(tabuleiro, x+i, y+j);
             }
         }

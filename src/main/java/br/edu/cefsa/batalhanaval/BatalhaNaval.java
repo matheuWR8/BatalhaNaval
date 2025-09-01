@@ -4,8 +4,7 @@
 
 package br.edu.cefsa.batalhanaval;
 
-import br.edu.cefsa.batalhanaval.Model.Destroier;
-import br.edu.cefsa.batalhanaval.Model.Tabuleiro;
+import br.edu.cefsa.batalhanaval.Model.*;
 
 /**
  *
@@ -17,13 +16,13 @@ public class BatalhaNaval {
         System.out.println("Hello World!");
 
         Tabuleiro tabuleiro = new Tabuleiro(10);
-        Destroier destroier = new Destroier();
+        PortaAvioes destroier = new PortaAvioes();
 
         if (tabuleiro.posicionarNavio(destroier, 0, 0, false)){
             System.out.println("Destroier posto");
         }
 
-        destroier.tiroSimples(tabuleiro, 12, 1);
+        destroier.tiroExplosivo(tabuleiro, 2, 1);
 
 
         System.out.println("Hello World!");
