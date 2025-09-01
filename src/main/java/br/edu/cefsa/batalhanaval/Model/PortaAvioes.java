@@ -17,13 +17,13 @@ public class PortaAvioes extends Embarcacao {
     }
 
     @Override
-    public void tiroDuplo(Tabuleiro tabuleiro, int x, int y) {
-        
+    public void tiroDuplo(Tabuleiro tabuleiro, int x, int y, boolean ehHorizontal) {
+        super.tiroDuplo(tabuleiro, x, y, ehHorizontal);
     }
 
     @Override
     public void tiroExplosivo(Tabuleiro tabuleiro, int x, int y) {
-        
+        super.tiroExplosivo(tabuleiro, x, y);
     }
 
 

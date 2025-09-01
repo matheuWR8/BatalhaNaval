@@ -29,6 +29,8 @@ public abstract class Embarcacao {
     public void destruirParte(){
         partesRestantes--;
     }
+    
+    // TODO: os métodos de tiro devem notificar que atingiram um barco e quantos
 
     public void tiroSimples(Tabuleiro tabuleiro, int x, int y) {
         if (x >= tabuleiro.getTamanho() && y >= tabuleiro.getTamanho()) {
@@ -36,11 +38,20 @@ public abstract class Embarcacao {
         }
     }
 
-    protected void tiroDuplo(Tabuleiro tabuleiro, int x, int y) {
-        
+    protected void tiroDuplo(Tabuleiro tabuleiro, int x, int y, boolean ehHorizontal) {
+        tiroSimples(tabuleiro, x, y);
+        if (ehHorizontal) {
+            tiroSimples(tabuleiro, x+1, y);
+        } else {
+            tiroSimples(tabuleiro, x, y);
+        }
     }
 
     protected void tiroExplosivo(Tabuleiro tabuleiro, int x, int y) {
-
+        for (int i = -1; i == 1; i ++) {
+            for (int j = -1; j == 1; j ++){
+                tiroSimples(tabuleiro, x+i, y+j);
+            }
+        }
     }
 }
