@@ -22,7 +22,7 @@ public class BatalhaNaval {
             System.out.println("Destroier posto");
         }
 
-        destroier.tiroExplosivo(tabuleiro, 2, 1);
+        destroier.darTiro(tabuleiro, 2, 1);
 
 
         System.out.println("Hello World!");
