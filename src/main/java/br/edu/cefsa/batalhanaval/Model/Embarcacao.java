@@ -33,7 +33,7 @@ public abstract class Embarcacao {
     // TODO: os métodos de tiro devem notificar que atingiram um barco e quantos
 
     public void tiroSimples(Tabuleiro tabuleiro, int x, int y) {
-        if (x < tabuleiro.getTamanho() && y < tabuleiro.getTamanho()) {
+        if (tabuleiro.validarPosicao(x, y)) {
             tabuleiro.getCelula(x,y).atingir();
         }
     }

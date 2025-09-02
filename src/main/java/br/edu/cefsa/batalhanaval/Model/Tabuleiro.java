@@ -33,11 +33,11 @@ public class Tabuleiro {
     public Celula getCelula(int x, int y) {
         return grade[x][y];
     }
-    
-    public boolean posicionarNavio(Embarcacao navio, int x, int y, boolean ehHorizontal){
-        ArrayList<Celula> posicoes = new ArrayList<>();
 
-        if (validarPosicoes(navio.getTamanho(), x, y, ehHorizontal, posicoes)){
+    public boolean posicionarNavio(Embarcacao navio, int x, int y, boolean ehHorizontal) {
+        Celula[] posicoes = new Celula[navio.getTamanho()];
+
+        if (validarPosicionamento(navio.getTamanho(), x, y, ehHorizontal, posicoes)) {
             for (Celula celula : posicoes) {
                 celula.setNavio(navio);
             }
@@ -47,33 +47,42 @@ public class Tabuleiro {
         }
     }
 
-    private boolean validarPosicoes(int tamanhoNavio, int x, int y, boolean ehHorizontal, 
-                                    ArrayList<Celula> posicoes) {
+    private boolean validarPosicionamento(int tamanhoNavio, int x, int y, boolean ehHorizontal,
+                                    Celula[] posicoes) {
+        if (!validarPosicao(x, y)) {
+            return false;
+        }
+
         if (ehHorizontal) {
             if (x + tamanhoNavio > tamanho) {
                 return false;
             }
 
-            for (int i = 0; i < tamanhoNavio; i++){
-                if (grade[x+i][y].contemNavio()) {
+            for (int i = 0; i < tamanhoNavio; i++) {
+                if (grade[x + i][y].contemNavio()) {
                     return false;
                 }
-                posicoes.add(grade[x+i][y]);
+                posicoes[i] = grade[x + i][y];
             }
         } else {
             if (y + tamanhoNavio > tamanho) {
                 return false;
             }
 
-            for (int i = 0; i < tamanhoNavio; i++){
-                if (grade[x][y+i].contemNavio()) {
+            for (int i = 0; i < tamanhoNavio; i++) {
+                if (grade[x][y + i].contemNavio()) {
                     return false;
                 }
-                posicoes.add(grade[x][y+i]);
+                posicoes[i] = grade[x][y + i];
             }
         }
 
         return true;
+    }
+
+    public boolean validarPosicao(int x, int y) {
+        boolean celulaExiste = (x >= 0 && x < tamanho) && (y >= 0 && y < tamanho);
+        return celulaExiste;
     }
 
 }
