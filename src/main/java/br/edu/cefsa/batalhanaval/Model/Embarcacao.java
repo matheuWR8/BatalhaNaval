@@ -11,6 +11,7 @@ package br.edu.cefsa.batalhanaval.Model;
 public abstract class Embarcacao {
     
     protected String tipo;
+    protected Tiro tipoDeTiro;
     protected int tamanho;
     protected int partesRestantes;
     
@@ -26,12 +27,20 @@ public abstract class Embarcacao {
         return partesRestantes;
     }
     
+    public void setTipoDeTiro(Tiro tiro) {
+        this.tipoDeTiro = tiro;
+    }
+    
     public void destruirParte(){
         partesRestantes--;
     }
     
     // TODO: os métodos de tiro devem notificar que atingiram um barco e quantos
 
+    public void darTiro(Tabuleiro tabuleiro, int x, int y) {
+        tipoDeTiro.disparar(tabuleiro, x, y);
+    }
+/*
     public void tiroSimples(Tabuleiro tabuleiro, int x, int y) {
         if (tabuleiro.validarPosicao(x, y)) {
             tabuleiro.getCelula(x,y).atingir();
@@ -54,4 +63,5 @@ public abstract class Embarcacao {
             }
         }
     }
+*/
 }
