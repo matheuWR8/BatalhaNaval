@@ -16,6 +16,7 @@ public class PortaAvioes extends Embarcacao {
         super.partesRestantes = tamanho;
     }
 
+/*
     @Override
     public void tiroDuplo(Tabuleiro tabuleiro, int x, int y, boolean ehHorizontal) {
         super.tiroDuplo(tabuleiro, x, y, ehHorizontal);
@@ -25,6 +26,6 @@ public class PortaAvioes extends Embarcacao {
     public void tiroExplosivo(Tabuleiro tabuleiro, int x, int y) {
         super.tiroExplosivo(tabuleiro, x, y);
     }
-
+*/
 
 }
