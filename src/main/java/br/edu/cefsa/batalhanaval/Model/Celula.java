@@ -4,6 +4,8 @@
  */
 package br.edu.cefsa.batalhanaval.Model;
 
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Embarcacao;
+
 /**
  *
  * @author math

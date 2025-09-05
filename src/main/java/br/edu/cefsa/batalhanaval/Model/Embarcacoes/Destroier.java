@@ -1,4 +1,4 @@
-package br.edu.cefsa.batalhanaval.Model;
+package br.edu.cefsa.batalhanaval.Model.Embarcacoes;
 
 public class Destroier extends Embarcacao {
 

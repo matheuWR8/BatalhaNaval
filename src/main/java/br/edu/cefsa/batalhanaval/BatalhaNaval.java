@@ -4,6 +4,7 @@
 
 package br.edu.cefsa.batalhanaval;
 
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.PortaAvioes;
 import br.edu.cefsa.batalhanaval.Model.*;
 
 /**

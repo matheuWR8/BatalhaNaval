@@ -8,7 +8,13 @@ package br.edu.cefsa.batalhanaval.Model;
  *
  * @author 081230011
  */
+
 public class Jogo {
+    private Dificuldade dificuldade;
     private Jogador jogador1;
     private Jogador jogador2;
+    
+    public Jogo(Dificuldade dificuldade){
+        this.dificuldade = dificuldade;
+    }
 }

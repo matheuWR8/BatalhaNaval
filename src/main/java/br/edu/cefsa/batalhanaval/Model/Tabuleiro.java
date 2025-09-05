@@ -4,6 +4,7 @@
  */
 package br.edu.cefsa.batalhanaval.Model;
 
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Embarcacao;
 import java.util.ArrayList;
 
 /**
