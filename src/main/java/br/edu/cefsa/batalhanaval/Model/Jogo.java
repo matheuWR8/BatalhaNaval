@@ -6,13 +6,9 @@ package br.edu.cefsa.batalhanaval.Model;
 
 /**
  *
- * @author math
+ * @author 081230011
  */
-public class PortaAvioes extends Embarcacao {
-    
-    public PortaAvioes() {
-        super.tipo = "Porta-Aviões";
-        super.tamanho = 6;
-        super.partesRestantes = tamanho;
-    }
+public class Jogo {
+    private Jogador jogador1;
+    private Jogador jogador2;
 }
