@@ -1,11 +1,11 @@
 package br.edu.cefsa.batalhanaval.Model.Embarcacoes;
 
+import br.edu.cefsa.batalhanaval.Model.Tiros.TiroSimples;
+
 public class Destroier extends Embarcacao {
 
     public Destroier(){
-        super.tipo = "Destróier";
-        super.tamanho = 3;
-        super.partesRestantes = tamanho;
+        super("Destróier", 3);
     }
 
 }

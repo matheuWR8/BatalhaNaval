@@ -10,9 +10,8 @@ import br.edu.cefsa.batalhanaval.Model.Tiros.TiroSimples;
  *
  * @author math
  */
-public class PortaAvioes extends Embarcacao {
-    
-    public PortaAvioes() {
-        super("Porta-Aviões", 6);
+public class Fragata extends Embarcacao {
+    public Fragata() {
+        super("Fragata", 4);
     }
 }
