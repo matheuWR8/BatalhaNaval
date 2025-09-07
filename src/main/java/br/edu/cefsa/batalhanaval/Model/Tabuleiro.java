@@ -1,26 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.cefsa.batalhanaval.Model;
 
 import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Embarcacao;
 import java.util.ArrayList;
 
 /**
- *
- * @author math
+ * Tabuleiro do jogo
  */
 public class Tabuleiro {
 
     private int tamanho;
     private Celula[][] grade;
-
+    
+    /**
+     * 
+     * @param tamanho tamanho do lado do tabuleiro (quadrado) 
+     */
     public Tabuleiro(int tamanho) {
         this.tamanho = tamanho;
         this.grade = new Celula[tamanho][tamanho];
 
-        for (int i = 0; i < tamanho; i++) {
+        for (int i = 0; i < tamanho; i++) { // popula o tabuleiro de células
             for (int j = 0; j < tamanho; j++) {
                 grade[i][j] = new Celula();
             }
@@ -31,15 +30,33 @@ public class Tabuleiro {
         return tamanho;
     }
 
+    /**
+     * Retorna a célula na coordenada (x,y) do tabuleiro.
+     * 
+     * @param x coordenada x da célula
+     * @param y coordenada y da célula
+     * @return célula (x,y) do tabuleiro
+     */
     public Celula getCelula(int x, int y) {
         return grade[x][y];
     }
 
+    /**
+     * Posiciona uma embarcação na posição e direção definidas, se for possível;
+     * (x,y) é a posição da extremidade superior (vert.) ou esquerda (horiz.),
+     * demais células são ocupadas conforme o tamanho do navio.
+     * 
+     * @param navio embarcação a ser posicionada
+     * @param x coordenada x da primeira posição
+     * @param y coordenada y da primeira posição
+     * @param ehHorizontal true para posicionar na horizontal; false para vertical
+     * @return true se foi possível posicionar o navio
+     */
     public boolean posicionarNavio(Embarcacao navio, int x, int y, boolean ehHorizontal) {
-        Celula[] posicoes = new Celula[navio.getTamanho()];
+        Celula[] posicoes = new Celula[navio.getTamanho()]; // array de posições validadas
 
         if (validarPosicionamento(navio.getTamanho(), x, y, ehHorizontal, posicoes)) {
-            for (Celula celula : posicoes) {
+            for (Celula celula : posicoes) { // posicionar o navio em cada célula
                 celula.setNavio(navio);
             }
             return true;
@@ -48,6 +65,17 @@ public class Tabuleiro {
         }
     }
 
+    /**
+     * Valida se o posicionamento escolhido para o navio é válida,
+     * isto é, se todas as partes estão dentro da matriz e as posições estão livres
+     * 
+     * @param navio embarcação a ser posicionada
+     * @param x coordenada x da primeira posição
+     * @param y coordenada y da primeira posição
+     * @param ehHorizontal true para posicionar na horizontal; false para vertical
+     * @param posicoes array para armazenar as posições validadas
+     * @return true se todas as posições são válidas
+     */
     private boolean validarPosicionamento(int tamanhoNavio, int x, int y, boolean ehHorizontal,
                                     Celula[] posicoes) {
         if (!validarPosicao(x, y)) {

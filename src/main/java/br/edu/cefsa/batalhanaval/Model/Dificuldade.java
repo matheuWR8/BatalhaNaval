@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.cefsa.batalhanaval.Model;
 
 import br.edu.cefsa.batalhanaval.Model.Embarcacoes.PortaAvioes;
@@ -9,8 +5,7 @@ import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Embarcacao;
 import java.util.ArrayList;
 
 /**
- *
- * @author math
+ * Níveis de dificuldade do jogo
  */
 public enum Dificuldade {
     FACIL(10, new int[]{1,1,2,2,2}),
@@ -19,7 +14,12 @@ public enum Dificuldade {
 
     private final int tamanhoTabuleiro;
     private final int[] quantidadeNavios;
-
+    
+    /**
+     * Construtor de dificuldade
+     * @param tamanhoTabuleiro tamanho do lado do tabuleiro
+     * @param quantidadeNavios quantidade de cada tipo de navio
+     */
     private Dificuldade(int tamanhoTabuleiro, int[] quantidadeNavios) {
         this.tamanhoTabuleiro = tamanhoTabuleiro;
         this.quantidadeNavios = quantidadeNavios;
