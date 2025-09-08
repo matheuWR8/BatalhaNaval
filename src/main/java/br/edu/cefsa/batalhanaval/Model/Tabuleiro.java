@@ -125,6 +125,11 @@ public class Tabuleiro {
         return celulaExiste;
     }
     
+    /**
+     * Gera uma matriz de caracteres correspondentes ao estado de cada posição
+     * 
+     * @return matriz de char representando o tabuleiro
+     */
     public char[][] getTabuleiroFull(){
         char[][] tabuleiroChar = new char[tamanho][tamanho];
         for (int i = 0; i < tamanho; i++){
@@ -135,6 +140,17 @@ public class Tabuleiro {
         return tabuleiroChar;
     }
     
+    /**
+     * Traduz o estado de uma célula para um caractere correspondente:
+     * '~' - água não atingida
+     * 'o' - água atingida
+     * 'P|C|F|D|S' - parte inteira de navio do tipo respectivo
+     * '@' - parte atingida da embarcação
+     * '#' - navio afundado
+     * 
+     * @param celula célula cujo estado será traduzido
+     * @return caractere correspondente ao estado da célula
+     */
     private char getCharFromCelula(Celula celula){
         if (celula.contemNavio()) {
             if (celula.foiAtingida()){
