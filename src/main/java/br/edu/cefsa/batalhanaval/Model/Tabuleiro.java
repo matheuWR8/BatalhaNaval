@@ -1,6 +1,11 @@
 package br.edu.cefsa.batalhanaval.Model;
 
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Cruzador;
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Destroier;
 import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Embarcacao;
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Fragata;
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.PortaAvioes;
+import br.edu.cefsa.batalhanaval.Model.Embarcacoes.Submarino;
 import java.util.ArrayList;
 
 /**
@@ -66,7 +71,7 @@ public class Tabuleiro {
     }
 
     /**
-     * Valida se o posicionamento escolhido para o navio é válida,
+     * Valida se o posicionamento escolhido para o navio é válido,
      * isto é, se todas as partes estão dentro da matriz e as posições estão livres
      * 
      * @param navio embarcação a ser posicionada
@@ -109,9 +114,41 @@ public class Tabuleiro {
         return true;
     }
 
+    /**
+     * Verifica se uma posição (x,y) está dentro do tabuleiro
+     * @param x coordenada x da posição
+     * @param y coordenada y da posição
+     * @return true se a posição estiver dentro do tabuleiro
+     */
     public boolean validarPosicao(int x, int y) {
         boolean celulaExiste = (x >= 0 && x < tamanho) && (y >= 0 && y < tamanho);
         return celulaExiste;
+    }
+    
+    public char[][] getTabuleiroFull(){
+        char[][] tabuleiroChar = new char[tamanho][tamanho];
+        for (int i = 0; i < tamanho; i++){
+            for (int j = 0; j < tamanho; j++) {
+                tabuleiroChar[i][j] = getCharFromCelula(grade[i][j]);
+            }
+        }
+        return tabuleiroChar;
+    }
+    
+    private char getCharFromCelula(Celula celula){
+        if (celula.contemNavio()) {
+            if (celula.foiAtingida()){
+                if (celula.getNavio().afundou()){
+                    return '#';
+                }
+                return '@';
+            }
+            return celula.getNavio().getTipo();
+        }
+        if (celula.foiAtingida()){
+            return 'o';
+        }
+        return '~';
     }
 
 }

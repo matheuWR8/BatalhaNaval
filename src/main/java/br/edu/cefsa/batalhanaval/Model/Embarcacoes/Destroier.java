@@ -8,7 +8,7 @@ import br.edu.cefsa.batalhanaval.Model.Tiros.TiroSimples;
 public class Destroier extends Embarcacao {
 
     public Destroier(){
-        super("Destróier", 3);
+        super('D', 3);
     }
 
 }

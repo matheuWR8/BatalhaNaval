@@ -9,19 +9,19 @@ import br.edu.cefsa.batalhanaval.Model.Tiros.TiroSimples;
  */
 public abstract class Embarcacao {
     
-    protected String tipo;
+    protected char tipo;
     protected Tiro tipoDeTiro;
     protected int tamanho;
     protected int partesRestantes;
     
-    public Embarcacao(String tipo, int tamanho) {
+    public Embarcacao(char tipo, int tamanho) {
         this.tipo = tipo;
         this.tipoDeTiro = new TiroSimples();
         this.tamanho = tamanho;
         this.partesRestantes = tamanho;
     }
     
-    public String getTipo() {
+    public char getTipo() {
         return tipo;
     }
 
@@ -42,7 +42,7 @@ public abstract class Embarcacao {
      * 
      * @return true se houver 0 partes restantes
      */
-    public boolean foiAfundada() {
+    public boolean afundou() {
         return partesRestantes == 0;
     }
     

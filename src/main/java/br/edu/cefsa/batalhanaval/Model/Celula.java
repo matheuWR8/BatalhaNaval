@@ -26,6 +26,10 @@ public class Celula {
         contemNavio = true;
     }
 
+    public Embarcacao getNavio() {
+        return navio;
+    }
+
     /**
      * Atinge uma célula e, se possui embarcação, subtrai parte a parte atingida dele
      * @return true se atingiu uma embarcação

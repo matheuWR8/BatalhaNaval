@@ -8,7 +8,7 @@ import br.edu.cefsa.batalhanaval.Model.Tiros.TiroSimples;
 public class Fragata extends Embarcacao {
     
     public Fragata() {
-        super("Fragata", 4);
+        super('F', 4);
     }
 
 }

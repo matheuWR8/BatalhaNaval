@@ -8,7 +8,7 @@ import br.edu.cefsa.batalhanaval.Model.Tiros.TiroSimples;
 public class Submarino extends Embarcacao { 
     
     public Submarino() {
-        super("Submarino", 2);
+        super('S', 2);
     }
     
 }
